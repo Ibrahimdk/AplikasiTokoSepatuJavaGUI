@@ -1,0 +1,11 @@
+create database SepatuDb;
+
+create table tb_user(UId int PRIMARY KEY,UName varchar(50),UPass varchar(50));
+
+create table tb_customer(CustId int PRIMARY KEY, CustName varchar(50),CustAdd varchar(50), CustPhone varchar(50));
+
+create table tb_category(CatId int PRIMARY KEY, ShoeDesc varchar(50));
+
+create table tb_shoe(SId int PRIMARY KEY, SName varchar(50), SCat int, foreign key(SCat)references tb_category(CatId), Sqty int, Sprice int);
+
+create table tb_bill(BNum int, BDate varchar(40), CustId int, foreign key(CustId) references tb_customer(custid), uid int, foreign key(uid) references tb_user(uid), amt int);

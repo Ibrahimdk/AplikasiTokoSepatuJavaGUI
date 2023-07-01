@@ -82,11 +82,11 @@ public class Billing extends javax.swing.JFrame {
         BillDate = new com.toedter.calendar.JDateChooser();
         txtTotal = new javax.swing.JLabel();
         txtTotal1 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
+        txtShoes = new javax.swing.JLabel();
+        txtUsers = new javax.swing.JLabel();
+        txtCustomers = new javax.swing.JLabel();
+        txtBilling = new javax.swing.JLabel();
+        txtLogout = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -394,9 +394,9 @@ public class Billing extends javax.swing.JFrame {
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 281, Short.MAX_VALUE)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                 .addGap(30, 30, 30)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(PrintBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(SaveBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(SaveBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(PrintBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtTotal)
@@ -404,45 +404,70 @@ public class Billing extends javax.swing.JFrame {
                 .addGap(80, 80, 80))
         );
 
-        jLabel3.setBackground(new java.awt.Color(255, 153, 153));
-        jLabel3.setFont(new java.awt.Font("Berlin Sans FB Demi", 1, 20)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(82, 109, 130));
-        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel3.setText("Shoes");
-        jLabel3.setMaximumSize(new java.awt.Dimension(456, 256));
-        jLabel3.setMinimumSize(new java.awt.Dimension(456, 256));
+        txtShoes.setBackground(new java.awt.Color(255, 153, 153));
+        txtShoes.setFont(new java.awt.Font("Berlin Sans FB Demi", 1, 20)); // NOI18N
+        txtShoes.setForeground(new java.awt.Color(82, 109, 130));
+        txtShoes.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        txtShoes.setText("Shoes");
+        txtShoes.setMaximumSize(new java.awt.Dimension(456, 256));
+        txtShoes.setMinimumSize(new java.awt.Dimension(456, 256));
+        txtShoes.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txtShoesMouseClicked(evt);
+            }
+        });
 
-        jLabel8.setBackground(new java.awt.Color(255, 153, 153));
-        jLabel8.setFont(new java.awt.Font("Berlin Sans FB Demi", 1, 20)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(82, 109, 130));
-        jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel8.setText("Users");
-        jLabel8.setMaximumSize(new java.awt.Dimension(456, 256));
-        jLabel8.setMinimumSize(new java.awt.Dimension(456, 256));
+        txtUsers.setBackground(new java.awt.Color(255, 153, 153));
+        txtUsers.setFont(new java.awt.Font("Berlin Sans FB Demi", 1, 20)); // NOI18N
+        txtUsers.setForeground(new java.awt.Color(82, 109, 130));
+        txtUsers.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        txtUsers.setText("Users");
+        txtUsers.setMaximumSize(new java.awt.Dimension(456, 256));
+        txtUsers.setMinimumSize(new java.awt.Dimension(456, 256));
+        txtUsers.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txtUsersMouseClicked(evt);
+            }
+        });
 
-        jLabel10.setBackground(new java.awt.Color(255, 153, 153));
-        jLabel10.setFont(new java.awt.Font("Berlin Sans FB Demi", 1, 20)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(82, 109, 130));
-        jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel10.setText("Customers");
-        jLabel10.setMaximumSize(new java.awt.Dimension(456, 256));
-        jLabel10.setMinimumSize(new java.awt.Dimension(456, 256));
+        txtCustomers.setBackground(new java.awt.Color(255, 153, 153));
+        txtCustomers.setFont(new java.awt.Font("Berlin Sans FB Demi", 1, 20)); // NOI18N
+        txtCustomers.setForeground(new java.awt.Color(82, 109, 130));
+        txtCustomers.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        txtCustomers.setText("Customers");
+        txtCustomers.setMaximumSize(new java.awt.Dimension(456, 256));
+        txtCustomers.setMinimumSize(new java.awt.Dimension(456, 256));
+        txtCustomers.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txtCustomersMouseClicked(evt);
+            }
+        });
 
-        jLabel12.setBackground(new java.awt.Color(255, 153, 153));
-        jLabel12.setFont(new java.awt.Font("Berlin Sans FB Demi", 1, 20)); // NOI18N
-        jLabel12.setForeground(new java.awt.Color(82, 109, 130));
-        jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel12.setText("Billing");
-        jLabel12.setMaximumSize(new java.awt.Dimension(456, 256));
-        jLabel12.setMinimumSize(new java.awt.Dimension(456, 256));
+        txtBilling.setBackground(new java.awt.Color(255, 153, 153));
+        txtBilling.setFont(new java.awt.Font("Berlin Sans FB Demi", 1, 20)); // NOI18N
+        txtBilling.setForeground(new java.awt.Color(82, 109, 130));
+        txtBilling.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        txtBilling.setText("Billing");
+        txtBilling.setMaximumSize(new java.awt.Dimension(456, 256));
+        txtBilling.setMinimumSize(new java.awt.Dimension(456, 256));
+        txtBilling.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txtBillingMouseClicked(evt);
+            }
+        });
 
-        jLabel14.setBackground(new java.awt.Color(255, 153, 153));
-        jLabel14.setFont(new java.awt.Font("Berlin Sans FB Demi", 1, 20)); // NOI18N
-        jLabel14.setForeground(new java.awt.Color(82, 109, 130));
-        jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel14.setText("Logout");
-        jLabel14.setMaximumSize(new java.awt.Dimension(456, 256));
-        jLabel14.setMinimumSize(new java.awt.Dimension(456, 256));
+        txtLogout.setBackground(new java.awt.Color(255, 153, 153));
+        txtLogout.setFont(new java.awt.Font("Berlin Sans FB Demi", 1, 20)); // NOI18N
+        txtLogout.setForeground(new java.awt.Color(82, 109, 130));
+        txtLogout.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        txtLogout.setText("Logout");
+        txtLogout.setMaximumSize(new java.awt.Dimension(456, 256));
+        txtLogout.setMinimumSize(new java.awt.Dimension(456, 256));
+        txtLogout.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txtLogoutMouseClicked(evt);
+            }
+        });
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/exit.png"))); // NOI18N
 
@@ -453,12 +478,12 @@ public class Billing extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(24, 24, 24)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtShoes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtUsers, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtCustomers, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtBilling, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtLogout, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 109, Short.MAX_VALUE)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -469,15 +494,15 @@ public class Billing extends javax.swing.JFrame {
                 .addGap(36, 36, 36)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(36, 36, 36)
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtShoes, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtUsers, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtCustomers, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtBilling, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtLogout, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
@@ -523,7 +548,7 @@ int txtTot = 0;
         //menambahkan data ke dalam bill
         if(PnameTb.getText().isEmpty()||QtyTb.getText().isEmpty()||PriceTb.getText().isEmpty())
         {
-            
+            JOptionPane.showMessageDialog(this, "Missing Info");
         }else {
         int tot = Integer.valueOf(PriceTb.getText())*Integer.valueOf(QtyTb.getText());
         DefaultTableModel model = (DefaultTableModel) BillTable.getModel();
@@ -532,6 +557,7 @@ int txtTot = 0;
         txtTotal.setText("Rp "+txtTot);
         n++;
         row++;
+        UpdateQuantity();
         }
         
     }//GEN-LAST:event_AddBillBtnActionPerformed
@@ -557,6 +583,24 @@ private void CountIt()
     }catch (Exception e){
         
     }
+}
+
+private void UpdateQuantity()
+{
+    try {
+        int NewQty = Stock - Integer.valueOf(QtyTb.getText());
+         Con = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/sepatudb","root","");
+                PreparedStatement Add = (PreparedStatement) Con.prepareStatement("update  tb_shoe set Sqty=? where SId=?");
+                Add.setInt(2,Key);              
+                Add.setInt(1,NewQty);              
+                int row = Add.executeUpdate();
+                //JOptionPane.showMessageDialog(this, "Shoes Updated");
+                Con.close();
+                DisplaySepatu();
+    }catch (Exception e) {
+        
+    }
+   
 }
 //akan tersimpan pada 
     private void SaveBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaveBtnActionPerformed
@@ -629,6 +673,31 @@ int Stock = 0;
         PriceTb.setText(model.getValueAt(Myindex, 4).toString());
     }//GEN-LAST:event_ProductTableMouseClicked
 
+    private void txtShoesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtShoesMouseClicked
+        new Sepatu().setVisible(true);
+            this.dispose();
+    }//GEN-LAST:event_txtShoesMouseClicked
+
+    private void txtUsersMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtUsersMouseClicked
+        new Users().setVisible(true);
+            this.dispose();
+    }//GEN-LAST:event_txtUsersMouseClicked
+
+    private void txtCustomersMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtCustomersMouseClicked
+        new Customers().setVisible(true);
+            this.dispose();
+    }//GEN-LAST:event_txtCustomersMouseClicked
+
+    private void txtBillingMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtBillingMouseClicked
+        new Billing().setVisible(true);
+            this.dispose();
+    }//GEN-LAST:event_txtBillingMouseClicked
+
+    private void txtLogoutMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtLogoutMouseClicked
+        new Login().setVisible(true);
+            this.dispose();
+    }//GEN-LAST:event_txtLogoutMouseClicked
+  
     /**
      * @param args the command line arguments
      */
@@ -663,6 +732,8 @@ int Stock = 0;
             }
         });
     }
+    
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton AddBillBtn;
@@ -678,25 +749,25 @@ int Stock = 0;
     private javax.swing.JButton SaveBtn;
     private javax.swing.JComboBox<String> UserCb;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JLabel txtBilling;
+    private javax.swing.JLabel txtCustomers;
+    private javax.swing.JLabel txtLogout;
+    private javax.swing.JLabel txtShoes;
     private javax.swing.JLabel txtTotal;
     private javax.swing.JLabel txtTotal1;
+    private javax.swing.JLabel txtUsers;
     // End of variables declaration//GEN-END:variables
 }
